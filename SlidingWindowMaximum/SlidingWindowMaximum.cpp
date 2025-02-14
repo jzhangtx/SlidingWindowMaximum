@@ -11,7 +11,8 @@ std::vector<int> MaxSlidingWindow(std::vector<int>& A, int k)
     for (size_t i = 0; i < A.size()-k+1; ++i)
     {
         int max = A[i];
-        for (size_t j = i+1; j < std::min(A.size(), i+k); ++j)
+        size_t up = i + k;
+        for (size_t j = i+1; j < up; ++j)
         {
             max = std::max(max, A[j]);
         }
